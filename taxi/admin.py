@@ -10,7 +10,9 @@ class DriverAdmin(UserAdmin):
     for_flake = ("first_name", "last_name", "license_number",)
     add_fieldsets = (UserAdmin.add_fieldsets
                      + (("Additional info",
-                         {"fields": for_flake}),))
+                         {"fields": (
+                             "first_name", "last_name", "license_number",
+                         )}),))
 
 
 class CarAdmin(admin.ModelAdmin):
